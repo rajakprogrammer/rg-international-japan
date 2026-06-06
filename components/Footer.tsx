@@ -41,7 +41,7 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-brand-gold-400" />
-                <span className="text-brand-blue-200">Japan</span>
+                <span className="text-brand-blue-200">Fukuoka, Japan</span>
               </div>
               <a href="tel:096-237-6573" className="flex items-center gap-2 text-brand-blue-200 hover:text-brand-gold-400 transition-colors">
                 <Phone className="h-4 w-4" />

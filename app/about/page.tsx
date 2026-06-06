@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/29914700/pexels-photo-29914700.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Kumamoto Castle"
+            alt="Fukuoka Castle"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/95 via-brand-blue-900/85 to-brand-blue-900/70" />
@@ -46,13 +46,13 @@ export default function AboutPage() {
                 <svg className="w-4 h-4 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
-                Based in Kumamoto, Japan
+                Based in Fukuoka, Japan
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 About <span className="text-brand-gold-400">RG International</span>
               </h1>
               <p className="text-lg text-white/90 mb-6">
-                RG International Co., Ltd. is a registered company in Kumamoto, Japan dedicated to supporting international students and workers in achieving their dreams of studying, working, and building a career in Japan.
+                RG International Co., Ltd. is a registered company in Fukuoka, Japan dedicated to supporting international students and workers in achieving their dreams of studying, working, and building a career in Japan.
               </p>
               <p className="text-white/80 mb-6">
                 With years of experience and a deep understanding of Japanese immigration procedures, we provide comprehensive guidance from initial consultation to successful settlement in Japan.

@@ -31,7 +31,7 @@ export default function ContactPage() {
               <svg className="w-4 h-4 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
-              Kumamoto, Japan
+              Fukuoka, Japan
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
               Contact <span className="text-brand-gold-400">Us</span>
@@ -159,11 +159,11 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-brand-blue-900 mb-2">Our Location</h2>
-            <p className="text-muted-foreground">Kumamoto, Japan</p>
+            <p className="text-muted-foreground">Fukuoka, Japan</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13455.84758678761!2d130.68537!3d32.7925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3546946bd26bfc39%3A0x95d51efc9c0e9f9e!2sKumamoto%2C%20Japan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13455.84758678761!2d130.68537!3d32.7925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3546946bd26bfc39%3A0x95d51efc9c0e9f9e!2sFukuoka%2C%20Japan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
               width="100%"
               height="400"
               style={{ border: 0 }}

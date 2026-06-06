@@ -13,7 +13,7 @@ interface CTABannerProps {
 
 export default function CTABanner({
   title = "Start Your Journey to Japan Today",
-  subtitle = "Based in Kumamoto, RG International guides you through every step of your study or work visa application.",
+  subtitle = "Based in Fukuoka, RG International guides you through every step of your study or work visa application.",
   primaryButtonText = "Apply Now",
   primaryButtonHref = "/contact",
   secondaryButtonText = "Learn More",
@@ -25,7 +25,7 @@ export default function CTABanner({
       <div className="absolute inset-0">
         <img
           src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Kumamoto Castle"
+          alt="Fukuoka Castle"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/95 to-brand-blue-800/90" />
@@ -38,7 +38,7 @@ export default function CTABanner({
               <svg className="w-3 h-3 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
-              Kumamoto, Japan
+              Fukuoka, Japan
             </div>
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">{title}</h2>
             <p className="text-brand-blue-100 text-sm lg:text-base">{subtitle}</p>

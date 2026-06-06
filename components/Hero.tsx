@@ -5,11 +5,11 @@ import { ArrowRight, GraduationCap, Briefcase, Plane } from 'lucide-react';
 export default function Hero() {
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Background Image - Kumamoto Castle */}
+      {/* Background Image - Fukuoka Castle */}
       <div className="absolute inset-0">
         <img
           src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Kumamoto Castle Japan"
+          alt="Fukuoka Castle Japan"
           className="w-full h-full object-cover"
         />
         {/* Overlay gradient */}
@@ -43,7 +43,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg text-white/90 max-w-xl">
-              Based in Kumamoto, RG International helps international students and workers achieve their dreams in Japan through education support, career guidance, and visa assistance.
+              Based in Fukuoka, Japan, RG International helps international students and workers achieve their dreams in Japan through education support, career guidance, and visa assistance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -80,7 +80,7 @@ export default function Hero() {
             <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/20">
               {/* Location badge */}
               <div className="absolute -top-3 left-6 bg-brand-gold-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                Kumamoto, Japan
+                Fukuoka, Japan
               </div>
 
               <div className="pt-4 space-y-6">
@@ -116,7 +116,7 @@ export default function Hero() {
                     <svg className="w-5 h-5 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    Kumamoto City, Japan
+                    Fukuoka City, Japan
                   </div>
                 </div>
               </div>
