@@ -28,13 +28,29 @@ export default async function FAQPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-brand-blue-50 to-white overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/3784159/pexels-photo-3784159.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Japanese architecture"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-900/90 via-brand-blue-900/80 to-brand-blue-900/90" />
+        </div>
+
+        <div className="relative container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-blue-900 mb-6">
-              Frequently Asked <span className="text-brand-gold-500">Questions</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-sm text-white border border-white/30 mb-6">
+              <svg className="w-4 h-4 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Kumamoto, Japan
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Frequently Asked <span className="text-brand-gold-400">Questions</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white/90">
               Find answers to common questions about studying, working, and living in Japan. Can't find what you're looking for? Contact us directly.
             </p>
           </div>
@@ -89,7 +105,7 @@ export default async function FAQPage() {
                 Contact Us
               </a>
               <a
-                href="mailto:raju.rgint1@gmail.com"
+                href="mailto:raju.rgintl@gmail.com"
                 className="inline-flex items-center justify-center px-6 py-3 border border-brand-blue-600 text-brand-blue-600 font-medium rounded-lg hover:bg-brand-blue-50 transition-colors"
               >
                 Email Us Directly

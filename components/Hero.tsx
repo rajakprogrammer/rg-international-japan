@@ -4,36 +4,46 @@ import { ArrowRight, GraduationCap, Briefcase, Plane } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-blue-50 via-white to-brand-gold-50" />
+    <section className="relative overflow-hidden min-h-[90vh] flex items-center">
+      {/* Background Image - Kumamoto Castle */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Kumamoto Castle Japan"
+          className="w-full h-full object-cover"
+        />
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/90 via-brand-blue-900/70 to-brand-blue-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-900/60 via-transparent to-transparent" />
+      </div>
 
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-blue-100/50 to-transparent" />
-      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-brand-gold-100/30 to-transparent" />
+      {/* Decorative Japanese pattern overlay */}
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+      }} />
 
       <div className="relative container mx-auto px-4 lg:px-8 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left content */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-blue-100 px-4 py-2 text-sm text-brand-blue-700">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-sm text-white border border-white/30">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue-600"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold-500"></span>
               </span>
               Trusted by 500+ international students & workers
             </div>
 
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-brand-blue-900 leading-tight">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
               Your Gateway to{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-600 to-brand-gold-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-400 to-brand-gold-500">
                 Study and Work
               </span>{' '}
-              Opportunities in Japan
+              in Japan
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-xl">
-              RG International helps international students and workers achieve their goals in Japan through education support, career guidance, and visa assistance. Start your journey with us today.
+            <p className="text-lg text-white/90 max-w-xl">
+              Based in Kumamoto, RG International helps international students and workers achieve their dreams in Japan through education support, career guidance, and visa assistance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -43,7 +53,7 @@ export default function Hero() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-brand-blue-600 text-brand-blue-600 hover:bg-brand-blue-50">
+              <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20 bg-transparent">
                 <Link href="/services">Our Services</Link>
               </Button>
             </div>
@@ -51,49 +61,64 @@ export default function Hero() {
             {/* Quick stats */}
             <div className="flex flex-wrap gap-8 pt-6">
               <div className="flex items-center gap-2">
-                <GraduationCap className="h-5 w-5 text-brand-blue-600" />
-                <span className="text-sm font-medium">Student Visa Support</span>
+                <GraduationCap className="h-5 w-5 text-brand-gold-400" />
+                <span className="text-sm font-medium text-white">Student Visa Support</span>
               </div>
               <div className="flex items-center gap-2">
-                <Briefcase className="h-5 w-5 text-brand-blue-600" />
-                <span className="text-sm font-medium">Work Visa Support</span>
+                <Briefcase className="h-5 w-5 text-brand-gold-400" />
+                <span className="text-sm font-medium text-white">Work Visa Support</span>
               </div>
               <div className="flex items-center gap-2">
-                <Plane className="h-5 w-5 text-brand-blue-600" />
-                <span className="text-sm font-medium">SSW Support</span>
+                <Plane className="h-5 w-5 text-brand-gold-400" />
+                <span className="text-sm font-medium text-white">SSW Support</span>
               </div>
             </div>
           </div>
 
-          {/* Right content - Hero image */}
+          {/* Right content - Info Card */}
           <div className="relative lg:pl-8">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.pexels.com/photos/2179211/pexels-photo-2179211.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Tokyo cityscape with Mount Fuji"
-                className="w-full h-80 lg:h-96 object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-900/40 to-transparent" />
+            <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/20">
+              {/* Location badge */}
+              <div className="absolute -top-3 left-6 bg-brand-gold-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                Kumamoto, Japan
+              </div>
 
-              {/* Overlay card */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-lg bg-brand-blue-600 flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">RG</span>
+              <div className="pt-4 space-y-6">
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-brand-blue-600 mb-4">
+                    <span className="text-white font-bold text-2xl">RG</span>
                   </div>
-                  <div>
-                    <p className="font-semibold text-brand-blue-900">RG International Co., Ltd.</p>
-                    <p className="text-sm text-muted-foreground">Your trusted partner in Japan</p>
+                  <h2 className="text-2xl font-bold text-white mb-2">RG International Co., Ltd.</h2>
+                  <p className="text-white/80">Your trusted partner for Japan visa services</p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="bg-white/10 rounded-xl p-4 text-center">
+                    <p className="text-3xl font-bold text-brand-gold-400">500+</p>
+                    <p className="text-sm text-white/80">Success Stories</p>
+                  </div>
+                  <div className="bg-white/10 rounded-xl p-4 text-center">
+                    <p className="text-3xl font-bold text-brand-gold-400">10+</p>
+                    <p className="text-sm text-white/80">Years Experience</p>
+                  </div>
+                  <div className="bg-white/10 rounded-xl p-4 text-center">
+                    <p className="text-3xl font-bold text-brand-gold-400">98%</p>
+                    <p className="text-sm text-white/80">Success Rate</p>
+                  </div>
+                  <div className="bg-white/10 rounded-xl p-4 text-center">
+                    <p className="text-3xl font-bold text-brand-gold-400">24/7</p>
+                    <p className="text-sm text-white/80">Support</p>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Floating badge */}
-            <div className="absolute -top-4 -right-4 bg-white rounded-full shadow-lg p-4 hidden lg:block">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-brand-blue-600">500+</p>
-                <p className="text-xs text-muted-foreground">Success Stories</p>
+                <div className="flex items-center justify-center lg:justify-start gap-4 pt-4 border-t border-white/20">
+                  <div className="flex items-center gap-2 text-sm text-white/80">
+                    <svg className="w-5 h-5 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Kumamoto City, Japan
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -62,7 +62,7 @@ export default function FloatingContactButton() {
             </a>
 
             <a
-              href="mailto:raju.rgint1@gmail.com"
+              href="mailto:raju.rgintl@gmail.com"
               className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
             >
               <div className="w-10 h-10 rounded-full bg-brand-gold-500 flex items-center justify-center">
@@ -70,7 +70,7 @@ export default function FloatingContactButton() {
               </div>
               <div>
                 <p className="font-medium text-foreground text-sm">Email</p>
-                <p className="text-xs text-muted-foreground">raju.rgint1@gmail.com</p>
+                <p className="text-xs text-muted-foreground">raju.rgintl@gmail.com</p>
               </div>
             </a>
           </div>

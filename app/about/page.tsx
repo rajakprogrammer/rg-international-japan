@@ -28,38 +28,65 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-brand-blue-50 to-white overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/29914700/pexels-photo-29914700.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Kumamoto Castle"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/95 via-brand-blue-900/85 to-brand-blue-900/70" />
+        </div>
+
+        <div className="relative container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-brand-blue-900 mb-6">
-                About <span className="text-brand-gold-500">RG International</span>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-sm text-white border border-white/30 mb-6">
+                <svg className="w-4 h-4 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Based in Kumamoto, Japan
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                About <span className="text-brand-gold-400">RG International</span>
               </h1>
-              <p className="text-lg text-muted-foreground mb-6">
-                RG International Co., Ltd. is a registered company in Japan dedicated to supporting international students and workers in achieving their dreams of studying, working, and building a career in Japan.
+              <p className="text-lg text-white/90 mb-6">
+                RG International Co., Ltd. is a registered company in Kumamoto, Japan dedicated to supporting international students and workers in achieving their dreams of studying, working, and building a career in Japan.
               </p>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-white/80 mb-6">
                 With years of experience and a deep understanding of Japanese immigration procedures, we provide comprehensive guidance from initial consultation to successful settlement in Japan.
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
                 <div className="w-16 h-16 rounded-lg bg-brand-blue-600 flex items-center justify-center">
                   <span className="text-white font-bold text-2xl">RG</span>
                 </div>
                 <div>
-                  <p className="font-semibold text-brand-blue-900">Registered Company in Japan</p>
-                  <p className="text-sm text-muted-foreground">Officially recognized for visa support services</p>
+                  <p className="font-semibold text-white">Registered Company in Japan</p>
+                  <p className="text-sm text-white/80">Officially recognized for visa support services</p>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Team collaboration"
-                className="rounded-2xl shadow-xl w-full h-80 lg:h-96 object-cover"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-brand-gold-500 text-white rounded-xl p-6 shadow-lg hidden lg:block">
-                <p className="text-3xl font-bold">10+</p>
-                <p className="text-sm">Years of Excellence</p>
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-brand-gold-400 mb-2">500+</p>
+                    <p className="text-white/80">Students Helped</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-brand-gold-400 mb-2">98%</p>
+                    <p className="text-white/80">Success Rate</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-brand-gold-400 mb-2">10+</p>
+                    <p className="text-white/80">Years Experience</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-4xl font-bold text-brand-gold-400 mb-2">15+</p>
+                    <p className="text-white/80">Partner Schools</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -125,11 +152,11 @@ export default function AboutPage() {
               <div className="md:col-span-1">
                 <div className="relative inline-block">
                   <img
-                    src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Representative Director"
-                    className="w-48 h-48 rounded-full object-cover mx-auto"
+                    src="/image.png"
+                    alt="Gaire Raju - Representative Director"
+                    className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg border-4 border-brand-gold-400"
                   />
-                  <div className="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-brand-gold-500 flex items-center justify-center">
+                  <div className="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-brand-gold-500 flex items-center justify-center shadow-lg">
                     <Award className="h-6 w-6 text-white" />
                   </div>
                 </div>

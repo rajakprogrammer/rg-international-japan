@@ -27,9 +27,9 @@ export default function Header() {
               <Phone className="h-4 w-4" />
               <span>096-237-6573</span>
             </a>
-            <a href="mailto:raju.rgint1@gmail.com" className="flex items-center gap-2 hover:text-brand-gold-400 transition-colors">
+            <a href="mailto:raju.rgintl@gmail.com" className="flex items-center gap-2 hover:text-brand-gold-400 transition-colors">
               <Mail className="h-4 w-4" />
-              <span>raju.rgint1@gmail.com</span>
+              <span>raju.rgintl@gmail.com</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -106,9 +106,9 @@ export default function Header() {
                   <Phone className="h-4 w-4" />
                   <span>096-237-6573</span>
                 </a>
-                <a href="mailto:raju.rgint1@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground">
+                <a href="mailto:raju.rgintl@gmail.com" className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Mail className="h-4 w-4" />
-                  <span>raju.rgint1@gmail.com</span>
+                  <span>raju.rgintl@gmail.com</span>
                 </a>
               </div>
             </div>

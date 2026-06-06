@@ -18,7 +18,7 @@ const services = [
       'Visa application at Japanese embassy',
       'Pre-departure briefing',
     ],
-    image: 'https://images.pexels.com/photos/1436961/pexels-photo-1436961.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/5416070/pexels-photo-5416070.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     id: 'work-visa',
@@ -33,7 +33,7 @@ const services = [
       'Visa application support',
       'Post-arrival assistance',
     ],
-    image: 'https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/2179211/pexels-photo-2179211.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     id: 'ssw-visa',
@@ -48,7 +48,7 @@ const services = [
       'COE and visa application',
       'Settlement assistance',
     ],
-    image: 'https://images.pexels.com/photos/3184299/pexels-photo-3184299.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/2079469/pexels-photo-2079469.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     id: 'language-school',
@@ -63,7 +63,7 @@ const services = [
       'Accommodation assistance',
       'Student visa support',
     ],
-    image: 'https://images.pexels.com/photos/256269/pexels-photo-256269.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/53610/japanese-temple-kyoto-japan-temple-53610.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     id: 'job-matching',
@@ -78,7 +78,7 @@ const services = [
       'Salary negotiation support',
       'Post-offer guidance',
     ],
-    image: 'https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/12989589/pexels-photo-12989589.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     id: 'settlement',
@@ -93,7 +93,7 @@ const services = [
       'Japanese lessons recommendations',
       'Cultural orientation',
     ],
-    image: 'https://images.pexels.com/photos/2098328/pexels-photo-2098328.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/1252504/pexels-photo-1252504.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
 ];
 
@@ -101,13 +101,29 @@ export default function ServicesPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-brand-blue-50 to-white overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/2188369/pexels-photo-2188369.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Japanese temple"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-900/90 via-brand-blue-900/80 to-brand-blue-900/90" />
+        </div>
+
+        <div className="relative container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-blue-900 mb-6">
-              Our <span className="text-brand-gold-500">Services</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-sm text-white border border-white/30 mb-6">
+              <svg className="w-4 h-4 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Based in Kumamoto, Japan
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Our <span className="text-brand-gold-400">Services</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white/90">
               Comprehensive support for your journey to Japan. From student visas to career placement, we guide you every step of the way with professional expertise and personalized attention.
             </p>
           </div>

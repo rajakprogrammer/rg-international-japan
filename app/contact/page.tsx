@@ -6,7 +6,7 @@ const contactInfo = {
   representative: 'Gaire Raju',
   phone: '096-237-6573',
   mobile: '080-4690-4311',
-  email: 'raju.rgint1@gmail.com',
+  email: 'raju.rgintl@gmail.com',
   country: 'Japan',
 };
 
@@ -14,13 +14,29 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-16 lg:py-24 bg-gradient-to-br from-brand-blue-50 to-white overflow-hidden">
-        <div className="container mx-auto px-4 lg:px-8">
+      <section className="relative py-16 lg:py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.pexels.com/photos/2025382/pexels-photo-2025382.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Japanese garden"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-900/90 via-brand-blue-900/80 to-brand-blue-900/90" />
+        </div>
+
+        <div className="relative container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl lg:text-5xl font-bold text-brand-blue-900 mb-6">
-              Contact <span className="text-brand-gold-500">Us</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 text-sm text-white border border-white/30 mb-6">
+              <svg className="w-4 h-4 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              Kumamoto, Japan
+            </div>
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Contact <span className="text-brand-gold-400">Us</span>
             </h1>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-white/90">
               Ready to start your journey to Japan? Get in touch with us today for a free consultation. We are here to help you every step of the way.
             </p>
           </div>
@@ -67,7 +83,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium">Email</p>
-                      <a href="mailto:raju.rgint1@gmail.com" className="text-brand-blue-100 hover:text-white transition-colors">
+                      <a href="mailto:raju.rgintl@gmail.com" className="text-brand-blue-100 hover:text-white transition-colors">
                         {contactInfo.email}
                       </a>
                     </div>
@@ -143,11 +159,11 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-brand-blue-900 mb-2">Our Location</h2>
-            <p className="text-muted-foreground">Japan</p>
+            <p className="text-muted-foreground">Kumamoto, Japan</p>
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33206966.45019501!2d130.853702!3d36.204824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd91f3d75%3A0x6e1ec3a5c6e8c9e!2sJapan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13455.84758678761!2d130.68537!3d32.7925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3546946bd26bfc39%3A0x95d51efc9c0e9f9e!2sKumamoto%2C%20Japan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
               width="100%"
               height="400"
               style={{ border: 0 }}
