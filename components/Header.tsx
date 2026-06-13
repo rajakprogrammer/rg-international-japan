@@ -2,20 +2,22 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Phone, Mail, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Process', href: '/process' },
-  { name: 'Success Stories', href: '/testimonials' },
-  { name: 'Contact', href: '/contact' },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t, lang, setLang } = useLanguage();
+
+  const navigation = [
+    { name: t.nav.home, href: '/' },
+    { name: t.nav.about, href: '/about' },
+    { name: t.nav.services, href: '/services' },
+    { name: t.nav.process, href: '/process' },
+    { name: t.nav.stories, href: '/testimonials' },
+    { name: t.nav.contact, href: '/contact' },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm">
@@ -33,7 +35,30 @@ export default function Header() {
             </a>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-brand-gold-400">Your Gateway to Japan</span>
+            <span className="text-brand-gold-400">{t.nav.tagline}</span>
+            {/* Language Toggle */}
+            <div className="flex items-center gap-0.5 bg-brand-blue-700 rounded-full p-0.5">
+              <button
+                onClick={() => setLang('en')}
+                className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                  lang === 'en'
+                    ? 'bg-white text-brand-blue-700 shadow'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('ja')}
+                className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${
+                  lang === 'ja'
+                    ? 'bg-white text-brand-blue-700 shadow'
+                    : 'text-white/80 hover:text-white'
+                }`}
+              >
+                日本語
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -53,10 +78,10 @@ export default function Header() {
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden lg:flex lg:gap-x-8">
+          <div className="hidden lg:flex lg:gap-x-6">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 className="text-sm font-medium text-foreground hover:text-brand-blue-600 transition-colors"
               >
@@ -68,18 +93,42 @@ export default function Header() {
           {/* CTA Button */}
           <div className="hidden lg:flex lg:items-center lg:gap-4">
             <Button asChild className="bg-brand-gold-500 hover:bg-brand-gold-600 text-white">
-              <Link href="/contact">Apply Now</Link>
+              <Link href="/contact">{t.nav.apply}</Link>
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="lg:hidden p-2 text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+          {/* Mobile: language + menu button */}
+          <div className="lg:hidden flex items-center gap-2">
+            <div className="flex items-center gap-0.5 bg-brand-blue-100 rounded-full p-0.5">
+              <button
+                onClick={() => setLang('en')}
+                className={`px-2 py-0.5 rounded-full text-xs font-bold transition-all ${
+                  lang === 'en'
+                    ? 'bg-brand-blue-600 text-white shadow'
+                    : 'text-brand-blue-600'
+                }`}
+              >
+                EN
+              </button>
+              <button
+                onClick={() => setLang('ja')}
+                className={`px-2 py-0.5 rounded-full text-xs font-bold transition-all ${
+                  lang === 'ja'
+                    ? 'bg-brand-blue-600 text-white shadow'
+                    : 'text-brand-blue-600'
+                }`}
+              >
+                日本語
+              </button>
+            </div>
+            <button
+              type="button"
+              className="p-2 text-foreground"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile menu */}
@@ -88,7 +137,7 @@ export default function Header() {
             <div className="flex flex-col gap-4">
               {navigation.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.href}
                   href={item.href}
                   className="text-sm font-medium text-foreground hover:text-brand-blue-600 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
@@ -97,10 +146,8 @@ export default function Header() {
                 </Link>
               ))}
               <Button asChild className="bg-brand-gold-500 hover:bg-brand-gold-600 text-white w-full">
-                <Link href="/contact">Apply Now</Link>
+                <Link href="/contact">{t.nav.apply}</Link>
               </Button>
-
-              {/* Mobile contact info */}
               <div className="pt-4 border-t space-y-2">
                 <a href="tel:096-237-6573" className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Phone className="h-4 w-4" />

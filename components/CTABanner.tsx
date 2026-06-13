@@ -1,31 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
-interface CTABannerProps {
-  title?: string;
-  subtitle?: string;
-  primaryButtonText?: string;
-  primaryButtonHref?: string;
-  secondaryButtonText?: string;
-  secondaryButtonHref?: string;
-}
+export default function CTABanner() {
+  const { t } = useLanguage();
+  const c = t.cta;
 
-export default function CTABanner({
-  title = "Start Your Journey to Japan Today",
-  subtitle = "Based in Fukuoka, RG International guides you through every step of your study or work visa application.",
-  primaryButtonText = "Apply Now",
-  primaryButtonHref = "/contact",
-  secondaryButtonText = "Learn More",
-  secondaryButtonHref = "/services",
-}: CTABannerProps) {
   return (
     <section className="relative py-12 lg:py-16 overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Fukuoka Castle"
+          alt="Japan Castle"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/95 to-brand-blue-800/90" />
@@ -38,20 +27,20 @@ export default function CTABanner({
               <svg className="w-3 h-3 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
               </svg>
-              Fukuoka, Japan
+              {c.location}
             </div>
-            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">{title}</h2>
-            <p className="text-brand-blue-100 text-sm lg:text-base">{subtitle}</p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2">{c.title}</h2>
+            <p className="text-brand-blue-100 text-sm lg:text-base">{c.subtitle}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="bg-brand-gold-500 hover:bg-brand-gold-600 text-white">
-              <Link href={primaryButtonHref}>
-                {primaryButtonText}
+              <Link href="/contact">
+                {c.apply}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white text-brand-blue-800 border-white hover:bg-gray-100">
-              <Link href={secondaryButtonHref}>{secondaryButtonText}</Link>
+              <Link href="/services">{c.learn}</Link>
             </Button>
           </div>
         </div>

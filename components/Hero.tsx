@@ -1,18 +1,23 @@
+'use client';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, GraduationCap, Briefcase, Plane } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+  const h = t.hero;
+
   return (
     <section className="relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Background Image - Fukuoka Castle */}
+      {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Fukuoka Castle Japan"
+          alt="Japan Castle"
           className="w-full h-full object-cover"
         />
-        {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/90 via-brand-blue-900/70 to-brand-blue-900/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-900/60 via-transparent to-transparent" />
       </div>
@@ -31,30 +36,30 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold-500"></span>
               </span>
-              Trusted by 500+ international students & workers
+              {h.badge}
             </div>
 
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
-              Your Gateway to{' '}
+              {h.title1}{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold-400 to-brand-gold-500">
-                Study and Work
+                {h.title2}
               </span>{' '}
-              in Japan
+              {h.title3}
             </h1>
 
             <p className="text-lg text-white/90 max-w-xl">
-              Based in Fukuoka, Japan, RG International helps international students and workers achieve their dreams in Japan through education support, career guidance, and visa assistance.
+              {h.desc}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-brand-gold-500 hover:bg-brand-gold-600 text-white">
                 <Link href="/contact">
-                  Apply Now
+                  {h.apply}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white/20 bg-transparent">
-                <Link href="/services">Our Services</Link>
+                <Link href="/services">{h.services}</Link>
               </Button>
             </div>
 
@@ -62,15 +67,15 @@ export default function Hero() {
             <div className="flex flex-wrap gap-8 pt-6">
               <div className="flex items-center gap-2">
                 <GraduationCap className="h-5 w-5 text-brand-gold-400" />
-                <span className="text-sm font-medium text-white">Student Visa Support</span>
+                <span className="text-sm font-medium text-white">{h.studentVisa}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Briefcase className="h-5 w-5 text-brand-gold-400" />
-                <span className="text-sm font-medium text-white">Work Visa Support</span>
+                <span className="text-sm font-medium text-white">{h.workVisa}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Plane className="h-5 w-5 text-brand-gold-400" />
-                <span className="text-sm font-medium text-white">SSW Support</span>
+                <span className="text-sm font-medium text-white">{h.ssw}</span>
               </div>
             </div>
           </div>
@@ -78,9 +83,8 @@ export default function Hero() {
           {/* Right content - Info Card */}
           <div className="relative lg:pl-8">
             <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/20">
-              {/* Location badge */}
               <div className="absolute -top-3 left-6 bg-brand-gold-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                Fukuoka, Japan
+                {h.location}
               </div>
 
               <div className="pt-4 space-y-6">
@@ -88,26 +92,26 @@ export default function Hero() {
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-brand-blue-600 mb-4">
                     <span className="text-white font-bold text-2xl">RG</span>
                   </div>
-                  <h2 className="text-2xl font-bold text-white mb-2">RG International Co., Ltd.</h2>
-                  <p className="text-white/80">Your trusted partner for Japan visa services</p>
+                  <h2 className="text-2xl font-bold text-white mb-2">{h.company}</h2>
+                  <p className="text-white/80">{h.partner}</p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <p className="text-3xl font-bold text-brand-gold-400">500+</p>
-                    <p className="text-sm text-white/80">Success Stories</p>
+                    <p className="text-sm text-white/80">{h.successStories}</p>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <p className="text-3xl font-bold text-brand-gold-400">10+</p>
-                    <p className="text-sm text-white/80">Years Experience</p>
+                    <p className="text-sm text-white/80">{h.yearsExp}</p>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <p className="text-3xl font-bold text-brand-gold-400">98%</p>
-                    <p className="text-sm text-white/80">Success Rate</p>
+                    <p className="text-sm text-white/80">{h.successRate}</p>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <p className="text-3xl font-bold text-brand-gold-400">24/7</p>
-                    <p className="text-sm text-white/80">Support</p>
+                    <p className="text-sm text-white/80">{h.support}</p>
                   </div>
                 </div>
 
@@ -116,7 +120,7 @@ export default function Hero() {
                     <svg className="w-5 h-5 text-brand-gold-400" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                     </svg>
-                    Fukuoka City, Japan
+                    {h.location}
                   </div>
                 </div>
               </div>

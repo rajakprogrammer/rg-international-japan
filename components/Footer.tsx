@@ -1,27 +1,32 @@
+'use client';
+
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
-
-const footerLinks = {
-  services: [
-    { name: 'Student Visa Support', href: '/services#student-visa' },
-    { name: 'Work Visa Support', href: '/services#work-visa' },
-    { name: 'SSW Support', href: '/services#ssw-visa' },
-    { name: 'Language School', href: '/services#language-school' },
-    { name: 'Job Matching', href: '/services#job-matching' },
-  ],
-  company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Our Process', href: '/process' },
-    { name: 'Success Stories', href: '/testimonials' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Contact', href: '/contact' },
-  ],
-};
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+  const f = t.footer;
+  const l = f.links;
+
+  const serviceLinks = [
+    { name: l.studentVisa, href: '/services#student-visa' },
+    { name: l.workVisa, href: '/services#work-visa' },
+    { name: l.ssw, href: '/services#ssw-visa' },
+    { name: l.language, href: '/services#language-school' },
+    { name: l.jobMatching, href: '/services#job-matching' },
+  ];
+
+  const companyLinks = [
+    { name: l.about, href: '/about' },
+    { name: l.process, href: '/process' },
+    { name: l.stories, href: '/testimonials' },
+    { name: l.faq, href: '/faq' },
+    { name: l.contact, href: '/contact' },
+  ];
+
   return (
     <footer className="bg-brand-blue-900 text-white">
-      {/* Main footer */}
       <div className="container mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
@@ -35,13 +40,11 @@ export default function Footer() {
                 <span className="block text-xs text-brand-blue-200">Co., Ltd.</span>
               </div>
             </div>
-            <p className="text-sm text-brand-blue-200 mb-4">
-              Your trusted partner for studying and working in Japan. We provide comprehensive support for international students and workers.
-            </p>
+            <p className="text-sm text-brand-blue-200 mb-4">{f.desc}</p>
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-0.5 text-brand-gold-400" />
-                <span className="text-brand-blue-200">Fukuoka, Japan</span>
+                <span className="text-brand-blue-200">{f.location}</span>
               </div>
               <a href="tel:096-237-6573" className="flex items-center gap-2 text-brand-blue-200 hover:text-brand-gold-400 transition-colors">
                 <Phone className="h-4 w-4" />
@@ -56,10 +59,10 @@ export default function Footer() {
 
           {/* Services Links */}
           <div>
-            <h3 className="text-brand-gold-400 font-semibold mb-4">Services</h3>
+            <h3 className="text-brand-gold-400 font-semibold mb-4">{f.services}</h3>
             <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
+              {serviceLinks.map((link) => (
+                <li key={link.href}>
                   <Link href={link.href} className="text-sm text-brand-blue-200 hover:text-white transition-colors">
                     {link.name}
                   </Link>
@@ -70,10 +73,10 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-brand-gold-400 font-semibold mb-4">Company</h3>
+            <h3 className="text-brand-gold-400 font-semibold mb-4">{f.company}</h3>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
+              {companyLinks.map((link) => (
+                <li key={link.href}>
                   <Link href={link.href} className="text-sm text-brand-blue-200 hover:text-white transition-colors">
                     {link.name}
                   </Link>
@@ -82,12 +85,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Social & Newsletter */}
+          {/* Social */}
           <div>
-            <h3 className="text-brand-gold-400 font-semibold mb-4">Connect With Us</h3>
-            <p className="text-sm text-brand-blue-200 mb-4">
-              Follow us on social media for the latest updates and news about studying and working in Japan.
-            </p>
+            <h3 className="text-brand-gold-400 font-semibold mb-4">{f.connect}</h3>
+            <p className="text-sm text-brand-blue-200 mb-4">{f.connectDesc}</p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-brand-blue-800 flex items-center justify-center hover:bg-brand-gold-500 transition-colors">
                 <Facebook className="h-5 w-5" />
@@ -103,18 +104,17 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
       <div className="border-t border-brand-blue-800">
         <div className="container mx-auto px-4 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-brand-blue-300">
-            © {new Date().getFullYear()} RG International Co., Ltd. All rights reserved.
+            © {new Date().getFullYear()} {f.copyright}
           </p>
           <div className="flex gap-6 text-sm">
             <Link href="/privacy" className="text-brand-blue-300 hover:text-white transition-colors">
-              Privacy Policy
+              {f.privacy}
             </Link>
             <Link href="/terms" className="text-brand-blue-300 hover:text-white transition-colors">
-              Terms of Service
+              {f.terms}
             </Link>
           </div>
         </div>
