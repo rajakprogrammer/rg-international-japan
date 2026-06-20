@@ -1,7 +1,8 @@
 'use client';
 
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, ExternalLink } from 'lucide-react';
 import ContactForm from './ContactForm';
+import BusinessHours from '@/components/BusinessHours';
 import { useLanguage } from '@/context/LanguageContext';
 
 const contactInfo = {
@@ -11,6 +12,13 @@ const contactInfo = {
   mobile: '080-4690-4311',
   email: 'raju.rgintl@gmail.com',
 };
+
+// Google Maps embed for 1 Chome-10-23 Nuyamazu, Higashi Ward, Kumamoto 861-2102
+const MAPS_EMBED_URL =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.1!2d130.7614!3d32.8056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3540f5f4b7a5a001%3A0x0!2z44CSODYxLTIxMDIg54aK5pys55yM54aK5pys5biC5p2x5Yy65LmI725nOjHkgrgxMC0yMw!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp';
+
+const MAPS_LINK =
+  'https://maps.google.com/maps?q=1+Chome-10-23+Nuyamazu,+Higashi+Ward,+Kumamoto,+861-2102,+Japan';
 
 export default function ContactPage() {
   const { t } = useLanguage();
@@ -44,15 +52,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Contact Info + Form */}
       <section className="py-16 lg:py-24 bg-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
-            {/* Contact Info */}
-            <div className="lg:col-span-2">
-              <div className="bg-brand-blue-600 text-white rounded-2xl p-6 lg:p-8 h-full">
+            {/* Contact Info sidebar */}
+            <div className="lg:col-span-2 space-y-6">
+              <div className="bg-brand-blue-600 text-white rounded-2xl p-6 lg:p-8">
                 <h2 className="text-2xl font-bold mb-6">{c.infoTitle}</h2>
-                <div className="space-y-6">
+                <div className="space-y-5">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-lg bg-brand-blue-500 flex items-center justify-center flex-shrink-0">
                       <Phone className="h-5 w-5" />
@@ -81,7 +89,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="font-medium">{c.email}</p>
-                      <a href="mailto:raju.rgintl@gmail.com" className="text-brand-blue-100 hover:text-white transition-colors">
+                      <a href="mailto:raju.rgintl@gmail.com" className="text-brand-blue-100 hover:text-white transition-colors break-all">
                         {contactInfo.email}
                       </a>
                     </div>
@@ -91,31 +99,36 @@ export default function ContactPage() {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium">{c.location}</p>
-                      <p className="text-brand-blue-100">{c.locationVal}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-brand-blue-500 flex items-center justify-center flex-shrink-0">
-                      <Clock className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="font-medium">{c.hours}</p>
-                      <p className="text-brand-blue-100">{c.hoursWeek}</p>
-                      <p className="text-brand-blue-100">{c.hoursSat}</p>
+                      <p className="font-medium">{c.addressLabel} / 住所</p>
+                      <p className="text-brand-blue-100 text-sm leading-relaxed mt-1">
+                        {c.addressLine1}<br />
+                        {c.addressLine2}<br />
+                        {c.addressLine3}
+                      </p>
+                      <a
+                        href={MAPS_LINK}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 mt-2 text-brand-gold-300 hover:text-brand-gold-200 text-xs transition-colors"
+                      >
+                        <ExternalLink className="h-3 w-3" />
+                        View on Google Maps
+                      </a>
                     </div>
                   </div>
                 </div>
-                <div className="mt-8 pt-8 border-t border-brand-blue-500">
-                  <p className="text-sm text-brand-blue-100 mb-2">
+
+                <div className="mt-6 pt-6 border-t border-brand-blue-500">
+                  <p className="text-sm text-brand-blue-100 mb-1">
                     <span className="font-semibold text-white">{c.company}</span> {contactInfo.companyName}
                   </p>
                   <p className="text-sm text-brand-blue-100">
                     <span className="font-semibold text-white">{c.representative}</span> {contactInfo.representative}
                   </p>
                 </div>
+
                 {/* Social Links */}
-                <div className="mt-6 flex gap-3">
+                <div className="mt-6 flex gap-3 flex-wrap">
                   <a
                     href="https://www.facebook.com/raju.gaire1"
                     target="_blank"
@@ -140,7 +153,11 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
+
+              {/* Business Hours */}
+              <BusinessHours />
             </div>
+
             {/* Contact Form */}
             <div className="lg:col-span-3">
               <ContactForm />
@@ -149,24 +166,112 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Google Maps Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-brand-blue-900 mb-2">{c.mapTitle}</h2>
-            <p className="text-muted-foreground">{c.locationVal}</p>
+          {/* Section header */}
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 rounded-full bg-brand-blue-100 px-4 py-2 text-sm text-brand-blue-700 mb-4">
+              <MapPin className="w-4 h-4" />
+              {c.mapTitle} / 所在地
+            </div>
+            <h2 className="text-3xl font-bold text-brand-blue-900 mb-3">
+              {c.mapSubtitle}
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto text-sm">
+              {c.addressLine1}, {c.addressLine2}, {c.addressLine3}
+            </p>
+            <a
+              href={MAPS_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-3 px-5 py-2.5 bg-brand-blue-600 text-white text-sm font-medium rounded-full hover:bg-brand-blue-700 hover:scale-105 transition-all duration-200 shadow-md"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Open in Google Maps
+            </a>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13455.84758678761!2d130.68537!3d32.7925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3546946bd26bfc39%3A0x95d51efc9c0e9f9e!2sFukuoka%2C%20Japan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-            />
+
+          {/* Map + address card side by side on desktop */}
+          <div className="grid lg:grid-cols-3 gap-6 items-start">
+            {/* Map embed */}
+            <div className="lg:col-span-2">
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300">
+                <iframe
+                  src={MAPS_EMBED_URL}
+                  width="100%"
+                  height="440"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                  title="RG International Co., Ltd. — Kumamoto"
+                />
+              </div>
+            </div>
+
+            {/* Address detail card */}
+            <div className="space-y-4">
+              <div className="bg-brand-blue-50 rounded-2xl p-6 border border-brand-blue-100 hover:border-brand-blue-300 transition-colors">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-brand-blue-600 flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-brand-blue-900 text-sm">Office Address</p>
+                    <p className="text-xs text-muted-foreground">事務所住所</p>
+                  </div>
+                </div>
+                <div className="space-y-1 text-sm text-brand-blue-800 leading-relaxed">
+                  <p className="font-semibold text-brand-blue-900">RG International Co., Ltd.</p>
+                  <p className="text-xs text-muted-foreground">ケイ・エムデザイン</p>
+                  <div className="pt-2 border-t border-brand-blue-200 mt-2">
+                    <p>1 Chome-10-23 Nuyamazu</p>
+                    <p>Higashi Ward</p>
+                    <p>Kumamoto, 861-2102</p>
+                    <p>Japan</p>
+                  </div>
+                  <div className="pt-2 border-t border-brand-blue-200 mt-2 text-xs text-muted-foreground">
+                    <p>〒861-2102</p>
+                    <p>熊本県熊本市東区乳牛津1丁目10-23</p>
+                  </div>
+                </div>
+                <a
+                  href={MAPS_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 flex items-center justify-center gap-2 w-full py-2.5 bg-brand-blue-600 text-white text-sm font-medium rounded-xl hover:bg-brand-blue-700 transition-colors"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  Get Directions
+                </a>
+              </div>
+
+              {/* Compact hours card */}
+              <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-2 mb-3">
+                  <svg className="w-4 h-4 text-brand-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  <span className="font-semibold text-brand-blue-900 text-sm">Business Hours</span>
+                  <span className="text-xs text-muted-foreground">/ 営業時間</span>
+                </div>
+                <div className="space-y-1.5 text-sm">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Mon – Fri <span className="text-xs">月〜金</span></span>
+                    <span className="font-medium text-brand-blue-800">9:00 – 18:00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Sat – Sun <span className="text-xs">土・日</span></span>
+                    <span className="font-medium text-gray-400">Closed / 定休日</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground pt-1 border-t border-gray-100 mt-1">
+                    Japan Standard Time (UTC+9)
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

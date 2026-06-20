@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Facebook } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
@@ -43,8 +43,23 @@ export default function Footer() {
             <p className="text-sm text-brand-blue-200 mb-4">{f.desc}</p>
             <div className="space-y-2 text-sm">
               <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 text-brand-gold-400" />
-                <span className="text-brand-blue-200">{f.location}</span>
+                <MapPin className="h-4 w-4 mt-0.5 text-brand-gold-400 flex-shrink-0" />
+                <div>
+                  <span className="text-brand-blue-200 block leading-snug">
+                    1 Chome-10-23 Nuyamazu,<br />
+                    Higashi Ward, Kumamoto 861-2102,<br />
+                    Japan
+                  </span>
+                  <a
+                    href="https://maps.google.com/maps?q=1+Chome-10-23+Nuyamazu,+Higashi+Ward,+Kumamoto,+861-2102,+Japan"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 mt-1.5 text-brand-gold-400 hover:text-brand-gold-300 transition-colors text-xs"
+                  >
+                    <ExternalLink className="h-3 w-3" />
+                    View on Maps
+                  </a>
+                </div>
               </div>
               <a href="tel:096-237-6573" className="flex items-center gap-2 text-brand-blue-200 hover:text-brand-gold-400 transition-colors">
                 <Phone className="h-4 w-4" />
