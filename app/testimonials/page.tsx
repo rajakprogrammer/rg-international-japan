@@ -27,8 +27,8 @@ export default function TestimonialsPage() {
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/2345319/pexels-photo-2345319.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Japan cherry blossoms"
+            src="https://images.pexels.com/photos/1440727/pexels-photo-1440727.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Japan city skyline"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-900/90 via-brand-blue-900/80 to-brand-blue-900/90" />

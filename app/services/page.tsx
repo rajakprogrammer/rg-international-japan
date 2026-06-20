@@ -9,12 +9,12 @@ import { useLanguage } from '@/context/LanguageContext';
 const serviceIcons = [GraduationCap, Briefcase, FileCheck, School, Users, Languages];
 const serviceIds = ['student-visa', 'work-visa', 'ssw-visa', 'language-school', 'job-matching', 'settlement'];
 const serviceImages = [
-  'https://images.pexels.com/photos/5416070/pexels-photo-5416070.jpeg?auto=compress&cs=tinysrgb&w=600',
-  'https://images.pexels.com/photos/2179211/pexels-photo-2179211.jpeg?auto=compress&cs=tinysrgb&w=600',
-  'https://images.pexels.com/photos/2079469/pexels-photo-2079469.jpeg?auto=compress&cs=tinysrgb&w=600',
-  'https://images.pexels.com/photos/53610/japanese-temple-kyoto-japan-temple-53610.jpeg?auto=compress&cs=tinysrgb&w=600',
-  'https://images.pexels.com/photos/12989589/pexels-photo-12989589.jpeg?auto=compress&cs=tinysrgb&w=600',
-  'https://images.pexels.com/photos/1252504/pexels-photo-1252504.jpeg?auto=compress&cs=tinysrgb&w=600',
+  'https://images.pexels.com/photos/5416070/pexels-photo-5416070.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/2179211/pexels-photo-2179211.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/5212700/pexels-photo-5212700.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/3184396/pexels-photo-3184396.jpeg?auto=compress&cs=tinysrgb&w=800',
+  'https://images.pexels.com/photos/1252504/pexels-photo-1252504.jpeg?auto=compress&cs=tinysrgb&w=800',
 ];
 const serviceItemKeys = ['studentVisa', 'workVisa', 'sswVisa', 'languageSchool', 'jobMatching', 'settlement'] as const;
 
@@ -28,8 +28,8 @@ export default function ServicesPage() {
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/2188369/pexels-photo-2188369.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Japanese temple"
+            src="https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Japan scenery"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-900/90 via-brand-blue-900/80 to-brand-blue-900/90" />
@@ -82,13 +82,13 @@ export default function ServicesPage() {
                     </Button>
                   </div>
                   <div className={index % 2 === 1 ? 'lg:order-1' : ''}>
-                    <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                    <div className="relative rounded-2xl overflow-hidden shadow-xl group">
                       <img
                         src={serviceImages[index]}
                         alt={service.title}
-                        className="w-full h-72 lg:h-96 object-cover"
+                        className="w-full h-72 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-900/30 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-blue-900/40 to-transparent transition-opacity duration-300 group-hover:opacity-60" />
                     </div>
                   </div>
                 </div>

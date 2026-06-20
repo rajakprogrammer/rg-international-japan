@@ -131,7 +131,7 @@ export default function AboutPage() {
                   <img
                     src="/image.png"
                     alt="Gaire Raju - Representative Director"
-                    className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg border-4 border-brand-gold-400"
+                    className="w-48 h-48 rounded-full object-cover mx-auto shadow-lg border-4 border-brand-gold-400 transition-transform duration-500 hover:scale-105"
                   />
                   <div className="absolute bottom-2 right-2 w-12 h-12 rounded-full bg-brand-gold-500 flex items-center justify-center shadow-lg">
                     <Award className="h-6 w-6 text-white" />

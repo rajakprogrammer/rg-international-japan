@@ -13,8 +13,8 @@ export default function CTABanner() {
     <section className="relative py-12 lg:py-16 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Japan Castle"
+          src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Kumamoto Castle Japan"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/95 to-brand-blue-800/90" />

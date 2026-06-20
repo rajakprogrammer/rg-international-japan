@@ -14,8 +14,8 @@ export default function WhyChooseUs() {
     <section className="relative py-16 lg:py-24 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/2340882/pexels-photo-2340882.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Japan cityscape"
+          src="https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Kumamoto Castle Japan"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-white/95" />
@@ -25,11 +25,11 @@ export default function WhyChooseUs() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Image */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl overflow-hidden shadow-xl group cursor-default">
               <img
-                src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Japan Castle"
-                className="w-full h-80 lg:h-96 object-cover"
+                src="https://images.pexels.com/photos/2340882/pexels-photo-2340882.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Kumamoto Japan cityscape"
+                className="w-full h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-brand-gold-500 rounded-xl shadow-xl p-6 hidden lg:block">

@@ -16,8 +16,8 @@ export default function ProcessPage() {
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="https://images.pexels.com/photos/161401/fushimi-inari-torii-shrine-kyoto-japan-temple-161401.jpeg?auto=compress&cs=tinysrgb&w=1920"
-            alt="Fushimi Inari Shrine"
+            src="https://images.pexels.com/photos/2070485/pexels-photo-2070485.jpeg?auto=compress&cs=tinysrgb&w=1920"
+            alt="Japan torii gate path"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-brand-blue-900/90 via-brand-blue-900/80 to-brand-blue-900/90" />

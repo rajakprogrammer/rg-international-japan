@@ -14,8 +14,8 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/35511835/pexels-photo-35511835.jpeg?auto=compress&cs=tinysrgb&w=1920"
-          alt="Japan Castle"
+          src="https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          alt="Kumamoto Castle Japan"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue-900/90 via-brand-blue-900/70 to-brand-blue-900/50" />
