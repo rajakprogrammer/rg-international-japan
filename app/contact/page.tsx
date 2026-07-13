@@ -234,7 +234,7 @@ export default function ContactPage() {
                   </div>
                   <div className="pt-2 border-t border-brand-blue-200 mt-2 text-xs text-muted-foreground">
                     <p>〒861-2102</p>
-                    <p>熊本県熊本市東区乳牛津1丁目10-23</p>
+                    <p>熊本県熊本市東区沼山津1丁目10番23号</p>
                   </div>
                 </div>
                 <a
