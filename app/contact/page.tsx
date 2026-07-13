@@ -101,9 +101,9 @@ export default function ContactPage() {
                     <div>
                       <p className="font-medium">{c.addressLabel} / 住所</p>
                       <p className="text-brand-blue-100 text-sm leading-relaxed mt-1">
-                        {c.addressLine1}<br />
-                        {c.addressLine2}<br />
-                        {c.addressLine3}
+                        {c.addressLine1}
+                        {c.addressLine2 && <><br />{c.addressLine2}</>}
+                        {c.addressLine3 && <><br />{c.addressLine3}</>}
                       </p>
                       <a
                         href={MAPS_LINK}
@@ -179,7 +179,9 @@ export default function ContactPage() {
               {c.mapSubtitle}
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-sm">
-              {c.addressLine1}, {c.addressLine2}, {c.addressLine3}
+              {c.addressLine1}
+              {c.addressLine2 && <>, {c.addressLine2}</>}
+              {c.addressLine3 && <>, {c.addressLine3}</>}
             </p>
             <a
               href={MAPS_LINK}
@@ -233,7 +235,6 @@ export default function ContactPage() {
                     <p>Japan</p>
                   </div>
                   <div className="pt-2 border-t border-brand-blue-200 mt-2 text-xs text-muted-foreground">
-                    <p>〒861-2102</p>
                     <p>熊本県熊本市東区沼山津1丁目10番23号</p>
                   </div>
                 </div>
