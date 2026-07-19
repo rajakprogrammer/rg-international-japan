@@ -14,11 +14,16 @@ const contactInfo = {
 };
 
 // Google Maps embed for 1 Chome-10-23 Nuyamazu, Higashi Ward, Kumamoto 861-2102
-const MAPS_EMBED_URL =
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.1!2d130.7614!3d32.8056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3540f5f4b7a5a001%3A0x0!2z44CSODYxLTIxMDIg54aK5pys55yM54aK5pys5biC5p2x5Yy65LmI725nOjHkgrgxMC0yMw!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp';
+// Using the output=embed format — reliable in iframes without an API key.
+const MAPS_QUERY =
+  '1 Chome-10-23 Nuyamazu, Higashi Ward, Kumamoto, 861-2102, Japan';
+const MAPS_EMBED_URL = `https://maps.google.com/maps?q=${encodeURIComponent(
+  MAPS_QUERY
+)}&z=16&output=embed`;
 
-const MAPS_LINK =
-  'https://maps.google.com/maps?q=1+Chome-10-23+Nuyamazu,+Higashi+Ward,+Kumamoto,+861-2102,+Japan';
+const MAPS_LINK = `https://maps.google.com/maps?q=${encodeURIComponent(
+  MAPS_QUERY
+)}`;
 
 export default function ContactPage() {
   const { t } = useLanguage();
